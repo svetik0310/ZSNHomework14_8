@@ -79,6 +79,7 @@ public class ZSNHomeworkJUnitTest {
     void changeLanguageEnumTest(EnumLanguage language) {
         open("https://www.reverso.net/text-translation");
         $("button[class=app-new-top-bar-desktop__lang-trigger-button]").click();
-        $$(".app-interface-languages__list-item").find(text(language.name())).click();
+        $$(".app-interface-languages__list-item").find(text(language.getDesc())).click();
+        $(".app-new-top-bar-desktop__lang-trigger-button span").shouldHave(text(language.name()));
     }
 }
